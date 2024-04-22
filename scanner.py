@@ -38,7 +38,7 @@ def insert_data(cursor, ip, mac, status, hostname):
         existing_entry = cursor.fetchone()
         if not existing_entry:
             cursor.execute('''INSERT INTO devices (ip, mac, status, hostname)
-                              VALUES (?, ?, ?, ?)''', (ip, mac, status, hostname))
+                            VALUES (?, ?, ?, ?)''', (ip, mac, status, hostname))
             print("Inserted:", ip, mac, status, hostname)
         else:
             print("Skipped insertion for existing entry:", ip)
