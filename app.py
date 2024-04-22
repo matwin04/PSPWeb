@@ -1,7 +1,6 @@
 from bottle import route, run, template, static_file
 import sqlite3
 import os
-
 def fetch_data():
     conn = sqlite3.connect('net.db')
     c = conn.cursor()
@@ -14,6 +13,7 @@ def determine_status():
     online_devices = sum(1 for row in data if row[3] == 'online')
     total_devices = len(data)
     return online_devices, total_devices
+
 @route('/pages/<filename:path>')
 def serve_static(filename):
     return static_file(filename, root='./pages/')
