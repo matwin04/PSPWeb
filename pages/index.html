@@ -3,7 +3,7 @@
 <head>
     <title>Device Information</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    </style>
+    <link rel="stylesheet" href="/pages/styles/status.css">
 </head>
 <body>
 
@@ -26,13 +26,13 @@
                 <td>{{row[0]}}</td>
                 <td>{{row[1]}}</td>
                 <td>{{row[2]}}</td>
-                <td>{{row[3]}}</td>
+                <td id="status{{row[0]}}" class="{{row[3]}}">{{row[3]}}</td>
                 <td>{{row[4]}}</td>
             </tr>
             % end
         </tbody>
     </table>
 </div>
-
+<script src="/pages/scripts/status_color.js"></script>
 </body>
 </html>
