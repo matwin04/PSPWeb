@@ -20,14 +20,6 @@ def serve_static(filename):
 
 @route('/')
 def index():
-    online_devices, total_devices = determine_status()
-    if online_devices == total_devices:
-        overall_stat_text = "All Devices Online"
-        
-    data = fetch_data()
-    output = template('./pages/index.html',
-                    data=data
-                    )
-    return output
+    return template('./pages/index.html')
 run(host='localhost',port=5150, debug=True, reloader=True)
 print("run")
